@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="test1">点击1</button>
+<button id="test2">点击2</button>
+<button id="test3">点击3</button>
+</body>
+<script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+<script src="layer/layer.js"></script>
+<script>
+    $('#test1').on('click', function(){
+        layer.msg('Hello layer');
+    });
+    $('#test2').on('click', function(){
+        layer.open({
+            type: 1,
+            area: ['400px', '200px'],
+            shadeClose: true, //点击遮罩关闭  点页面其他地方也可以关闭，false点X号才能关闭
+            content: '<div style="padding:20px;">hello world</div>'
+        });
+    });
+    //页面层-自定义
+    $('#test3').on('click', function() {
+        layer.open({
+            type: 1,
+            title: false,
+            closeBtn: 0,
+            shadeClose: true,
+            skin: 'yourclass',
+            content: 'hi world'
+        })
+    })
+</script>
+</html>
